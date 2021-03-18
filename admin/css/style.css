@@ -1,0 +1,274 @@
+/* caja de ajustes del ususario */
+
+.dropdown-menu-lg {
+    max-width: 300px;
+    min-width: 230px;
+    padding: 0;
+}
+
+
+/* main */
+
+.content-header {
+    padding: 15px 1rem;
+}
+
+.card-body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.col-md-8 {
+    margin: 1.5rem auto 0 auto;
+}
+
+
+/* formulario crear admin */
+
+
+/* mesaje de los input */
+
+.inf-error {
+    font-size: 0.7rem;
+    margin: 0.5rem;
+    padding: 0;
+}
+
+.validar-estado {
+    position: relative;
+}
+
+.validarEstado,
+.validarEstadoconf {
+    position: absolute;
+    top: 0.7rem;
+    right: 1rem;
+    z-index: 100;
+    opacity: 0;
+}
+
+.inf-error {
+    display: block !important;
+}
+
+.error {
+    color: rgb(255, 0, 0);
+    opacity: 1;
+}
+
+.success {
+    color: #08d85a;
+    opacity: 1;
+}
+
+
+/* inputs crear admin */
+
+.form-control {
+    border: 1.5px solid #b0b5b9;
+    border-radius: 2px;
+    transition: 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    border: 1.5px solid #0075ff;
+    outline: none;
+}
+
+.input-color-red {
+    border: 1.5px solid red;
+    outline: none;
+}
+
+.input-color-red:focus {
+    border: 1.5px solid red;
+    outline: none;
+}
+
+
+/* login */
+
+.login-box {
+    margin: 2rem auto;
+}
+
+
+/* lista-admin */
+
+.icon {
+    color: #fff;
+}
+
+
+/* fontawesome-iconpicker */
+
+.fade.in {
+    opacity: 1;
+}
+
+
+/* invitado */
+
+.hover:hover {
+    cursor: pointer;
+}
+
+.img-invitado {
+    max-width: 15rem;
+}
+
+
+/*registrados*/
+
+ul li {
+    list-style: none;
+}
+
+.tabla-precio {
+    border: 1px solid #e1e1e1;
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    transition: all .3s ease;
+}
+
+.tabla-precio ul li {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #868686;
+    line-height: 26px;
+}
+
+.tabla-precio ul li:before {
+    font-family: 'FontAwesome';
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 5px;
+    font-size: 20px;
+    color: green;
+    -webkit-font-smoothing: antialiased;
+    content: "\f00c"
+}
+
+.tabla-precio h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.tabla-precio .numero {
+    color: #000000;
+    margin: 20px 0;
+}
+
+.tabla-precio h3 {
+    color: #fe4918;
+    font-family: 'PT Sans', sans-serif;
+    margin: 0;
+    font-weight: bold;
+}
+
+p.numero {
+    color: #fe4918;
+    font-size: 4em;
+    display: block;
+    margin: 0 0 10px 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+.contenido-dia {
+    padding: 10px;
+    display: none;
+}
+
+.contenido-dia>div {
+    float: left;
+    width: 100%;
+    padding: 5px;
+}
+
+.contenido-dia>div p {
+    text-align: left;
+}
+
+.contenido-dia>div label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contenido-dia>div label time {
+    color: #fe4918;
+    font-weight: bold;
+}
+
+@media(min-width: 768px) {
+    .contenido-dia>div {
+        width: 33.3%;
+    }
+    .contenido-dia>div label {
+        margin-bottom: 10px;
+    }
+}
+
+.contenido-dia .autor {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.contenido-dia .conferencista {
+    color: #fe4918;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h4 {
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 2px solid #fe4918;
+    padding-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.button.hollow,
+.button.hollow:hover {
+    background-color: white;
+    color: #fe4918;
+}
+
+.button {
+    background: #fe4918;
+    font-family: 'Oswald', sans-serif;
+    padding: 10px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-top: 20px;
+    display: inline-block;
+    transition: all 0.5 ease;
+    border: 0.5px solid #fe4919;
+    outline: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background: #e33000;
+    cursor: pointer;
+}
+
+.button.transparente {
+    background-color: transparent;
+    border: 2px solid #fff;
+    transition: all 0.5s ease-in-out;
+}
+
+.button.transparente:hover {
+    background-color: transparent;
+    border: 2px solid #fe4918;
+    background-color: #fe4918;
+}
