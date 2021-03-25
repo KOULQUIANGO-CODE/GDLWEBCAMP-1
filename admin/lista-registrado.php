@@ -95,7 +95,7 @@
                                                             echo '- ' . $articulo['cantidad'] . ' ' . $arreglo_articulos[$llave] . '<br>';
                                                         }
                                                     }else{
-                                                        echo '- ' . $articulo . ' ' . $arreglo_articulos[$llave] . '<br>';
+                                                        echo '- ' . '{"cantidad":"'.$articulo . '"}'. ' '. $arreglo_articulos[$llave] . '<br>';
                                                     }
                                                     
                                                 }
