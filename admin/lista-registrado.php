@@ -94,7 +94,6 @@
                                                         if($articulo['cantidad'] > 0){
                                                             echo '- ' . $articulo['cantidad'] . ' ' . $arreglo_articulos[$llave] . '<br>';
                                                         }
-                                                        
                                                     }else{
                                                         echo '- ' . $articulo . ' ' . $arreglo_articulos[$llave] . '<br>';
                                                     }
