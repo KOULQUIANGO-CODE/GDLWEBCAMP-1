@@ -90,7 +90,15 @@
                                                     'etiquetas' => 'Etiquetas'
                                                 );
                                                 foreach ($articulos as $llave => $articulo){
-                                                    echo '- ' . $articulo . ' ' . $arreglo_articulos[$llave] . '<br>';
+                                                    if(array_key_exists('cantidad',$articulo)){
+                                                        if($articulo['cantidad'] > 0){
+                                                            echo '- ' . $articulo['cantidad'] . ' ' . $arreglo_articulos[$llave] . '<br>';
+                                                        }
+                                                        
+                                                    }else{
+                                                        echo '- ' . $articulo . ' ' . $arreglo_articulos[$llave] . '<br>';
+                                                    }
+                                                    
                                                 }
                                             ?>
                                         </td>

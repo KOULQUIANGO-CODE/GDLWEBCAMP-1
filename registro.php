@@ -41,7 +41,7 @@
                                     <li>Todos los Talleres</li>
                                 </ul>
                                 <div class="orden">
-                                    <label for="pase_dosdias">Boletos deseados:</label>
+                                    <label for="pase_dia">Boletos deseados:</label>
                                     <input type="number" min="0" id="pase_dia" name="boletos[un_dia][cantidad]"
                                         placeholder="0">
                                     <input type="hidden" value="30" name="boletos[un_dia][precio]">
@@ -75,7 +75,7 @@
                                     <li>Todos los Talleres</li>
                                 </ul>
                                 <div class="orden">
-                                    <label for="pase_dia">Boletos deseados:</label>
+                                    <label for="pase_dosdias">Boletos deseados:</label>
                                     <input type="number" min="0" id="pase_dosdias"
                                         name="boletos[dos_dia][cantidad]"="0" placeholder="0">
                                     <input type="hidden" value="45" name="boletos[dos_dia][precio]">

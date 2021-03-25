@@ -23,7 +23,7 @@ $(document).ready(function() {
                         text: 'Bienvenid@ ' + respuesta.nombre
                     })
                     setTimeout(function() {
-                        window.location.href = 'admin-area.php';
+                        window.location.href = 'dashboard.php';
                     }, 1500);
 
                 } else {

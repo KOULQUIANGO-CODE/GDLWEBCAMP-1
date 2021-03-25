@@ -33,6 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
         pase_dia.addEventListener('click', mostarDias);
         pase_dosdias.addEventListener('click', mostarDias);
         pase_completo.addEventListener('click', mostarDias);
+        if (pase_dia.value || pase_dosdias.value || pase_completo.value) {
+            mostarDias();
+        }
+
+
         if (!document.getElementById('nombreregistrado')) {
             nombre.addEventListener('keyup', validarError);
             nombre.addEventListener('blur', validarError);

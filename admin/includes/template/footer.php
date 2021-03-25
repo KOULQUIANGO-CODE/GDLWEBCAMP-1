@@ -52,6 +52,8 @@ function obtenederPaginaActual(){
 <script src="js/tempusdominus-bootstrap-4.min.js"></script> <!-- datepicker -->
 <!-- Select2 -->
 <script src="js/select2.full.min.js"></script>
+<!-- ChartJS -->
+<script src="js/Chart.min.js"></script>
 <!-- AdminLTE App -->
 <script src="js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->

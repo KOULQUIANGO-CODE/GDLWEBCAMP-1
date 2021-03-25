@@ -242,6 +242,24 @@ $(document).ready(function() {
                             title: 'Error de Actualización',
                             text: '¡No se han modificado los datos!'
                         })
+                    } else if (respuesta.respuesta === 'RegistradoCreado') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Invitado Registrado',
+                            text: '¡Visitante ' + respuesta.nombre + ' ' + respuesta.apellido + ' Registrado Exitosamente!'
+                        })
+                    } else if (respuesta.respuesta === 'RegistradoActualizado') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Invitado Actualizada',
+                            text: '¡Visitante ' + respuesta.nombre + ' ' + respuesta.apellido + ' Actualizada Exitosamente!'
+                        })
+                    } else if (respuesta.respuesta === 'errorActualizacion') {
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'Error de Actualización',
+                            text: '¡No se han modificado los datos!'
+                        })
                     } else {
                         // notificacion de usuario creado 
                         Swal.fire({

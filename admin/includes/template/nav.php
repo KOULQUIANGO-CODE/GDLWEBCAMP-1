@@ -1,7 +1,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="admin-area.php" class="brand-link">
+      <a href="dashboard.php" class="brand-link">
           <img src="img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
               style="opacity: .8">
           <span class="brand-text font-weight-light">GDLWEBCAMP</span>
@@ -15,7 +15,7 @@
                   <img src="img/avatar5.png" class="img-circle elevation-2" alt="User Image">
               </div>
               <div class="info">
-                  <a href="admin-area.php" class="d-block"><?php echo $_SESSION['nombre']?></a>
+                  <a href="dashboard.php" class="d-block"><?php echo $_SESSION['nombre']?></a>
               </div>
           </div>
 
@@ -41,7 +41,7 @@
                   <li class="nav-header">Menú de Administración</li>
                   <!-- Dashboard -->
                   <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="dashboard.php" class="nav-link">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
                           <p>
                               Dashboard

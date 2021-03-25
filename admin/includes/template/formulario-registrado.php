@@ -91,6 +91,11 @@
                                 <!-- Fin Email registrado -->
 
                                 <!-- Pases Articulo registrado -->
+                                <?php
+                                    $pedido = $registrado['pases_articulos'];
+                                    $boletos = json_decode($pedido,true);
+                                ?>
+                                    
                                 <div class="form-group">
                                     <h3>Elige el número de boletos</h3>
                                     <div class="paquetes" id="paquetes">
@@ -107,9 +112,10 @@
                                                         <li>Todos los Talleres</li>
                                                     </ul>
                                                     <div class="orden text-center">
-                                                        <label for="pase_dosdias">Boletos deseados:</label>
+                                                        <label for="pase_dia">Boletos deseados:</label>
                                                         <input type="number" min="0" id="pase_dia"
-                                                            name="boletos[un_dia][cantidad]" placeholder="0">
+                                                            name="boletos[un_dia][cantidad]" placeholder="0"  
+                                                            value="<?php echo ($registrado['id_registrado']) ? $boletos['un_dia']['cantidad'] :'';?>">
                                                         <input type="hidden" value="30" name="boletos[un_dia][precio]">
                                                     </div>
                                                 </div>
@@ -127,7 +133,8 @@
                                                     <div class="orden text-center">
                                                         <label for="pase_completo">Boletos deseados:</label>
                                                         <input type="number" min="0" id="pase_completo"
-                                                            name="boletos[completo][cantidad]" placeholder="0">
+                                                            name="boletos[completo][cantidad]" placeholder="0"
+                                                            value="<?php echo ($registrado['id_registrado']) ? $boletos['pase_completo']['cantidad'] :'';?>">
                                                         <input type="hidden" value="50"
                                                             name="boletos[completo][precio]">
                                                     </div>
@@ -144,9 +151,10 @@
                                                         <li>Todos los Talleres</li>
                                                     </ul>
                                                     <div class="orden text-center">
-                                                        <label for="pase_dia">Boletos deseados:</label>
+                                                        <label for="pase_dosdias">Boletos deseados:</label>
                                                         <input type="number" min="0" id="pase_dosdias"
-                                                            name="boletos[dos_dia][cantidad]"="0" placeholder="0">
+                                                            name="boletos[dos_dia][cantidad]"="0" placeholder="0"
+                                                            value="<?php echo ($registrado['id_registrado']) ? $boletos['pase_2dias']['cantidad'] :'';?>">
                                                         <input type="hidden" value="45" name="boletos[dos_dia][precio]">
                                                     </div>
                                                 </div>
@@ -157,8 +165,12 @@
                                     <!-- Fin Pases Articulo registrado -->
 
                                     <!-- Talleres registrado -->
-
                                     <div class="box-header with-border">
+                                    <?php 
+                                        $eventos = $registrado['talleres_registrados'];
+                                        $id_eventos_registrados = json_decode($eventos , true);
+                                        ?>
+                                        
                                         <h3 class="box-title">Elige los Talleres</h3>
                                         <div id="eventos" class="eventos clearfix">
                                             <div class="caja">
@@ -246,7 +258,8 @@
                                                         </p>
                                                         <?php foreach ($eventos_dia as $evento){ ?>
                                                         <label>
-                                                            <input type="checkbox" name="registro[]"
+                                                            <input  <?php echo (in_array( $evento['id'],$id_eventos_registrados['eventos'])?'checked':'');?>
+                                                            type="checkbox" name="registro_taller[]"
                                                                 id="<? echo $evento['id']; ?>"
                                                                 value="<? echo $evento['id']; ?>">
                                                             <time>
@@ -277,7 +290,8 @@
                                             <small>(Promoción 7%
                                                 dto.)</small></label>
                                         <input type="number" min="0" id="camisa_evento" class="col-sm-5"
-                                            name="pedido_extra[camisas][cantidad]" size="3" placeholder="0">
+                                            name="pedido_extra[camisas][cantidad]" size="3" placeholder="0"
+                                            value="<?php echo ($registrado['id_registrado']) ? $boletos['camisas']:'';?>">
                                         <input type="hidden" name="pedido_extra[camisas][precio] " value="10">
                                     </div>
                                 </div>
@@ -286,7 +300,8 @@
                                         <label for="etiquetas" class="col-sm-6">Paquete de etiquetas $2
                                             <small>(HTML5,CSS3,JavaScript,Chrome)</small></label>
                                         <input type="number" min="0" id="etiquetas" class="col-sm-5"
-                                            name="pedido_extra[etiquetas][cantidad]" size="3" placeholder="0">
+                                            name="pedido_extra[etiquetas][cantidad]" size="3" placeholder="0"
+                                            value="<?php echo ($registrado['id_registrado']) ? $boletos['etiquetas']:'';?>">
                                         <input type="hidden" name="pedido_extra[etiquetas][precio] " value="2">
                                     </div>
                                 </div>
@@ -328,12 +343,16 @@
                                         <div id="listas-productos">
 
                                         </div>
+                                        <?php if($registrado['id_registrado']){?>
+                                            <p>Total Ya Pagado: $<?php echo $registrado['total_pagado']?></p>
+                                        <?php } ?>
+                                        
                                         <p>Total:</p>
                                         <div id="suma-total">
 
                                         </div>
                                         <input type="hidden" name="total_pedido" id="total_pedido">
-                                        <input type="submit" name="submit" id="btnRegistro" class="button"
+                                        <input type="hidden" name="submit" id="btnRegistro" class="button"
                                             value="Pagar">
                                     </div>
                                 </div>
@@ -342,6 +361,10 @@
                                 <!-- Botones del Formulario -->
                                 <div class="card-footer">
                                     <input type="hidden" name="id" value="<?php echo $id?>">
+
+                                    <!--Fecha de la edicion-->
+                                    <input type="hidden" name="fecha_registro" value="<?php echo ($registrado['id_registrado']) ? $registrado['fecha_registrado']:'';?>">
+                    
                                     <input type="hidden" name="registro" value="<?php echo $accion; ?>">
                                     <input type="submit" class="btn btn-info" id="evento"
                                         value="<?php echo $btnFormulario; ?>">
