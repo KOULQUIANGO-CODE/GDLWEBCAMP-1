@@ -82,6 +82,9 @@
                                         <td>
                                             <?php 
                                                 $articulos = json_decode( $registrado['pases_articulos'], true);
+                                               echo '<pre>';
+                                               var_dump($articulos);
+                                               echo '</pre>';
                                                 $arreglo_articulos = array(
                                                     'un_dia' => 'Pase 1 día',
                                                     'pase_2dias' => 'Pase 2 días',
@@ -95,7 +98,7 @@
                                                             echo '- ' . $articulo['cantidad'] . ' ' . $arreglo_articulos[$llave] . '<br>';
                                                         }
                                                     }else{
-                                                        echo '- ' . '{"cantidad":"'.$articulo . '"}'. ' '. $arreglo_articulos[$llave] . '<br>';
+                                                        echo '- ' .  var_export($articulo)  . ' '. $arreglo_articulos[$llave] . '<br>';
                                                     }
                                                     
                                                 }
