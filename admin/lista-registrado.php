@@ -97,11 +97,16 @@
                                                         if($articulo['cantidad'] > 0){
                                                             echo '- ' . $articulo['cantidad'] . ' ' . $arreglo_articulos[$llave] . '<br>';
                                                         }
-                                                    }else{
-                                                        echo '- ' .  var_export($articulo)  . ' '. $arreglo_articulos[$llave] . '<br>';
                                                     }
                                                     
                                                 }
+                                                foreach ($articulos as $articulo){
+                                                    if(!array_key_exists('cantidad',$articulo)){
+                                                     
+                                                            echo '- ' . $articulo['cantidad'] . ' ' .$articulo . '<br>';
+                                                    }
+                                                }
+                                            ?>
                                             ?>
                                         </td>
                                         <td>
