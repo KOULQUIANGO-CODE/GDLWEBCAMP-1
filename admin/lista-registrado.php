@@ -106,7 +106,7 @@
                                                         var_dump($articulo);
                                                         echo '</pre>';
                                                     }
-                                              
+                                              //x
                                                 }
                                             ?>
                                         </td>
