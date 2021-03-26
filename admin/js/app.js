@@ -67,158 +67,160 @@ $(document).ready(function() {
     $(function() {
         bsCustomFileInput.init();
     });
+    if (document.getElementById('grafica-registrados')) {
 
-    $(function() {
-        var grafica = document.getElementById('grafica-registrados').getContext('2d');
-        $.getJSON('servicios-registrados.php', function(data) {
-            console.log(data);
-            var myChart = new Chart(grafica, {
-                type: 'line',
-                data: {
-                    labels: data.map(item => item.fecha),
-                    datasets: [{
-                        label: ['Registrados'],
-                        data: data.map(item => item.cantidad),
-                        backgroundColor: ['rgb(23, 162, 184)']
 
-                    }],
-                },
-                options: {
-                    responsive: true,
-                    tooltips: {
-                        mode: 'index',
-                        intersect: false,
-                    },
-                    hover: {
-                        mode: 'nearest',
-                        intersect: true
-                    },
-                    scales: {
-                        xAxes: [{
-                            display: true,
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'REGISTROS'
-                            }
+        $(function() {
+            var grafica = document.getElementById('grafica-registrados').getContext('2d');
+            $.getJSON('servicios-registrados.php', function(data) {
+                console.log(data);
+                var myChart = new Chart(grafica, {
+                    type: 'line',
+                    data: {
+                        labels: data.map(item => item.fecha),
+                        datasets: [{
+                            label: ['Registrados'],
+                            data: data.map(item => item.cantidad),
+                            backgroundColor: ['rgb(23, 162, 184)']
+
                         }],
-                        yAxes: [{
-                            display: true,
-                            ticks: {
-                                beginAtZero: true
-                            },
-                            scaleLabel: {
+                    },
+                    options: {
+                        responsive: true,
+                        tooltips: {
+                            mode: 'index',
+                            intersect: false,
+                        },
+                        hover: {
+                            mode: 'nearest',
+                            intersect: true
+                        },
+                        scales: {
+                            xAxes: [{
                                 display: true,
-                                labelString: 'BOLETOS'
-                            }
-                        }]
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'REGISTROS'
+                                }
+                            }],
+                            yAxes: [{
+                                display: true,
+                                ticks: {
+                                    beginAtZero: true
+                                },
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'BOLETOS'
+                                }
+                            }]
+                        }
                     }
-                }
 
+                });
             });
+
+        });
+        $(function() {
+            var grafica = document.getElementById('grafica-pagado').getContext('2d');
+            $.getJSON('servicios-registrados-pagados.php', function(data) {
+                var myChart = new Chart(grafica, {
+                    type: 'line',
+                    data: {
+                        labels: data.map(item => item.fecha_pagado),
+                        datasets: [{
+                            label: ['Registrados Pagados'],
+                            data: data.map(item => item.pagado),
+                            backgroundColor: ['rgb(25, 191, 89)']
+
+                        }],
+                    },
+                    options: {
+                        responsive: true,
+                        tooltips: {
+                            mode: 'index',
+                            intersect: false,
+                        },
+                        hover: {
+                            mode: 'nearest',
+                            intersect: true
+                        },
+                        scales: {
+                            xAxes: [{
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'REGISTROS'
+                                }
+                            }],
+                            yAxes: [{
+                                display: true,
+                                ticks: {
+                                    beginAtZero: true
+                                },
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'BOLETOS'
+                                }
+                            }]
+                        }
+                    }
+
+                });
+            });
+
+        });
+        $(function() {
+            var grafica = document.getElementById('grafica-no-pagado').getContext('2d');
+            $.getJSON('servicios-registrados-no-pagados.php', function(data) {
+                var myChart = new Chart(grafica, {
+                    type: 'line',
+                    data: {
+                        labels: data.map(item => item.fecha_pagado),
+                        datasets: [{
+                            label: ['Registrados No Pagados'],
+                            data: data.map(item => item.pagado),
+                            backgroundColor: ['rgb(207, 35, 52)']
+
+                        }],
+                    },
+                    options: {
+                        responsive: true,
+                        tooltips: {
+                            mode: 'index',
+                            intersect: false,
+                        },
+                        hover: {
+                            mode: 'nearest',
+                            intersect: true
+                        },
+                        scales: {
+                            xAxes: [{
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'REGISTROS'
+                                }
+                            }],
+                            yAxes: [{
+                                display: true,
+                                ticks: {
+                                    beginAtZero: true
+                                },
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'BOLETOS'
+                                }
+                            }]
+                        }
+                    }
+
+                });
+            });
+
         });
 
-    });
-    $(function() {
-        var grafica = document.getElementById('grafica-pagado').getContext('2d');
-        $.getJSON('servicios-registrados-pagados.php', function(data) {
-            var myChart = new Chart(grafica, {
-                type: 'line',
-                data: {
-                    labels: data.map(item => item.fecha_pagado),
-                    datasets: [{
-                        label: ['Registrados Pagados'],
-                        data: data.map(item => item.pagado),
-                        backgroundColor: ['rgb(25, 191, 89)']
-
-                    }],
-                },
-                options: {
-                    responsive: true,
-                    tooltips: {
-                        mode: 'index',
-                        intersect: false,
-                    },
-                    hover: {
-                        mode: 'nearest',
-                        intersect: true
-                    },
-                    scales: {
-                        xAxes: [{
-                            display: true,
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'REGISTROS'
-                            }
-                        }],
-                        yAxes: [{
-                            display: true,
-                            ticks: {
-                                beginAtZero: true
-                            },
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'BOLETOS'
-                            }
-                        }]
-                    }
-                }
-
-            });
-        });
-
-    });
-    $(function() {
-        var grafica = document.getElementById('grafica-no-pagado').getContext('2d');
-        $.getJSON('servicios-registrados-no-pagados.php', function(data) {
-            var myChart = new Chart(grafica, {
-                type: 'line',
-                data: {
-                    labels: data.map(item => item.fecha_pagado),
-                    datasets: [{
-                        label: ['Registrados No Pagados'],
-                        data: data.map(item => item.pagado),
-                        backgroundColor: ['rgb(207, 35, 52)']
-
-                    }],
-                },
-                options: {
-                    responsive: true,
-                    tooltips: {
-                        mode: 'index',
-                        intersect: false,
-                    },
-                    hover: {
-                        mode: 'nearest',
-                        intersect: true
-                    },
-                    scales: {
-                        xAxes: [{
-                            display: true,
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'REGISTROS'
-                            }
-                        }],
-                        yAxes: [{
-                            display: true,
-                            ticks: {
-                                beginAtZero: true
-                            },
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'BOLETOS'
-                            }
-                        }]
-                    }
-                }
-
-            });
-        });
-
-    });
 
 
 
-
-
+    }
 });

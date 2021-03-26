@@ -95,14 +95,10 @@
                                                         if($articulo['cantidad'] > 0){
                                                             echo '- ' . $articulo['cantidad'] . ' ' . $arreglo_articulos[$llave] . '<br>';
                                                         }
-                                                    }else{
-                                                        echo '- ' . $llave . ' '. $arreglo_articulos[$llave] . '<br>';
-                                                        echo '<pre>';
-                                                        var_dump($llave);
-                                                        echo '</pre>';
-                                                    }
-                                            
+                                                }else{
+                                                    echo '- ' . (int) $articulo. ' '. $arreglo_articulos[$llave] . '<br>';
                                                 }
+                                            }
                                             ?>
                                         </td>
                                         <td>
