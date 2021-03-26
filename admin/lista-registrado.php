@@ -82,9 +82,9 @@
                                         <td>
                                             <?php 
                                                 $articulos = json_decode( $registrado['pases_articulos'], true);
-                                               echo '<pre>';
-                                               var_dump($articulos);
-                                               echo '</pre>';
+                                                echo '<pre>';
+                                                var_dump($articulos);
+                                                echo '</pre>';
                                                 $arreglo_articulos = array(
                                                     'un_dia' => 'Pase 1 día',
                                                     'pase_2dias' => 'Pase 2 días',
@@ -96,17 +96,18 @@
                                                     if(array_key_exists('cantidad',$articulo)){
                                                         if($articulo['cantidad'] > 0){
                                                             echo '- ' . $articulo['cantidad'] . ' ' . $arreglo_articulos[$llave] . '<br>';
+                                                            echo '<pre>';
+                                                        var_dump($articulo);
+                                                        echo '</pre>';
                                                         }
+                                                    }else{
+                                                        echo '- ' . $llave . ' '. $arreglo_articulos[$llave] . '<br>';
+                                                        echo '<pre>';
+                                                        var_dump($articulo);
+                                                        echo '</pre>';
                                                     }
-                                                    
+                                              
                                                 }
-                                                foreach ($articulos as $articulo){
-                                                    if(!array_key_exists('cantidad',$articulo)){
-                                                     
-                                                            echo '- ' . $articulo['cantidad'] . ' ' .$articulo . '<br>';
-                                                    }
-                                                }
-                                            ?>
                                             ?>
                                         </td>
                                         <td>
