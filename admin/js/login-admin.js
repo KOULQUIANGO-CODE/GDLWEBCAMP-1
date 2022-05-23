@@ -15,7 +15,7 @@ $(document).ready(function() {
             success: function(data) {
                 console.log(data);
                 const respuesta = data;
-                if (respuesta.resultado === 'exito') {
+                if (respuesta.resultado !== 'exito') {
                     // notificacion de usuario creado 
                     Swal.fire({
                         icon: 'success',
